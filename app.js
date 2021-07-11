@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const exphbs = require("express-handlebars");
 const restaurantList = require("./restaurant.json");
+const mongoose = require("mongoose");
 
 // setting template engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -49,4 +50,18 @@ app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`);
 });
 
-//2021.07.11分支測試
+//以下資料庫連接
+mongoose.connect("mongodb://localhost/todoList", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+
+db.on("error", () => {
+  console.log("mongodb error");
+});
+
+db.once("open", () => {
+  console.log("mongodb 連接成功");
+});
