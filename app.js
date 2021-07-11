@@ -4,7 +4,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const exphbs = require("express-handlebars");
-const restaurantList = require("./restaurant.json");
+// const restaurantList = require("./restaurant.json"); 改成讀取資料庫的
+const restaurantListMongoose = require("./models/todo");
 const mongoose = require("mongoose");
 
 // setting template engine
@@ -65,3 +66,7 @@ db.on("error", () => {
 db.once("open", () => {
   console.log("mongodb 連接成功");
 });
+
+const restaurantList = require("./models/todo");
+
+console.log(restaurantListMongoose);
