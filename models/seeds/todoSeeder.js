@@ -12,14 +12,6 @@ db.on("error", () => {
   console.log("mongodb error");
 });
 
-// db.once("open", () => {
-//   console.log("mongodb connected!");
-//   for (let i = 0; i < 10; i++) {
-//     Todo.create({ name: `name-${i}` });
-//     console.log("done");
-//   }
-// });
-
 //讀取餐廳資料
 const restaurantList = require("../../restaurant.json");
 const Restaurant = require("../todo");
@@ -28,7 +20,6 @@ db.once("open", () => {
   console.log("mongodb connected!");
   for (let i = 0; i < 8; i++) {
     Restaurant.create({
-      id: restaurantList.results[i].id,
       name: restaurantList.results[i].name,
       image: restaurantList.results[i].image,
       category: restaurantList.results[i].category,
