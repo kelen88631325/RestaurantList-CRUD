@@ -11,13 +11,15 @@
 
 3、可查詢餐廳名稱，或者餐廳種類。
 
-## 環境建置
+4、可以新增，刪除，修改餐廳資訊。
 
-- Visual Studio Code
-- Node.js
-- Express
-- Express-Handlebars
-- nodemon
+## 使用工具
+
+- 環境: Visual Studio Code ，Node.js
+- 框架: bootstrap，Express
+- 模板引擎: Express-Handlebars
+- 資料庫 :mongodb
+- 其餘工具: nodemon，body-parser，mongoose
 
 ## 安裝步驟
 
@@ -39,4 +41,7 @@
 
 ## 成品示意圖
 
-![示意圖](./示意圖.jpg)
+![示意圖](./介面01.jpg)
+![示意圖](./介面02.jpg)
+![示意圖](./介面03.jpg)
+![示意圖](./介面04.jpg)
